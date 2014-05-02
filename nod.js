@@ -158,6 +158,8 @@ Listener = (function() {
     this.eventHandlers['keyup'] = this.delayedCheck;
     if (this.$el.attr('type') === 'radio') {
       return $('[name="' + this.$el.attr("name") + '"]').on('change', this.eventHandlers.radio);
+    } else if (this.$el.attr('type') === 'file') {
+      return this.$el.on('change', this.eventHandlers.change);
     } else {
       this.$el.on('change', this.eventHandlers.change);
       this.$el.on('blur', this.eventHandlers.blur);
