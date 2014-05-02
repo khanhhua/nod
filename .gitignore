@@ -3,3 +3,4 @@ dist
 .tmp
 test/components
 *.sublime-*
+/*.log

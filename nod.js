@@ -134,6 +134,8 @@ Listener = (function() {
   Listener.prototype.events = function() {
     if (this.$el.attr('type') === 'radio') {
       return $('[name="' + this.$el.attr("name") + '"]').on('change', this.runCheck);
+    } else if (this.$el.attr('type') === 'file') {
+      return this.$el.on('change', this.runCheck);
     } else {
       this.$el.on('change', this.runCheck);
       this.$el.on('blur', this.runCheck);

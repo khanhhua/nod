@@ -15,6 +15,8 @@ class Listener
   events : =>
     if @$el.attr( 'type' ) is 'radio'         # Listen to all with same name
       $( '[name="'+@$el.attr("name")+'"]' ).on 'change', @runCheck
+    else if @$el.attr( 'type' ) is 'file'     # Listen to file
+      @$el.on 'change', @runCheck
     else
       @$el.on 'change', @runCheck             # For checkboxes and select fields
       @$el.on 'blur'  , @runCheck             # On blur we run the check
